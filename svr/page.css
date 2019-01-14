@@ -1,0 +1,14 @@
+.page {
+    display: flex;
+    flex-direction: row;
+}
+.talkLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.exit-btn-box {
+    position: absolute;
+    top:30rpx;
+    right: 30rpx;
+}
