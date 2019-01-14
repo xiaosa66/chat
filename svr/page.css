@@ -1,3 +1,10 @@
+
+
+#prePage {
+    position: relative;
+    bottom: 30rpx;
+}
+
 .page {
     display: flex;
     flex-direction: row;
