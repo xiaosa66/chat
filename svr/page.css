@@ -25,9 +25,12 @@ body {
     margin: 10px;
     border: 1px solid #ccc;
 }
-
+.user-box {
+    background: #777;
+    color: #ccc;
+}
 .message-box {
-    width: px;
+    width:560px;
 }
 
 #talkFrame {

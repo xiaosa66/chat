@@ -1,9 +1,10 @@
-//浏览器端执行文件文件
+//浏览器端执行文件
 
 
 var HOST = chatLib.HOST;
 var EVENT_TYPE = chatLib.EVENT_TYPE;
 var PORT = chatLib.PORT;
+
 $(document).ready(function () {
     var socket = null;
     var onlineUserMap = new zTool.SimpleMap();
