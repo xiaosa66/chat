@@ -15,7 +15,6 @@
 			// 收到了非正常格式的数据
 			console.log('method:analyzeMsgData,error:' + error);
 		}
-
 		return null;
 	}
 
