@@ -1,62 +1,61 @@
 <!doctype html>
 <html>
+
 <head>
     <title>503在线聊天室</title>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="page.css">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="zTool.js"></script>
     <script src="chatLib.js"></script>
     <script src="DateUtil.js"></script>
     <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
     <script src="chat.js"></script>
 </head>
+
 <body>
-<div id='errorPage' class='page' style='display:none;'>
-    <h1>
-        当前浏览器不支持WebSocket，请使用其他浏览器，例如chrome 4.0.249.0 +
-    </h1>
-</div>
-
-<div id='prePage' class="input-group mb-3">
-    <input id='nickInput' type="text" class="form-control" placeholder="请输入您的昵称" aria-label="Recipient's username"
-           aria-describedby="basic-addon2">
-    <div class="input-group-append">
-        <button id='open' class="btn btn-outline-secondary" type="button">进入聊天室</button>
+    <div id='errorPage' class='page' style='display:none;'>
+        <h1>
+            当前浏览器不支持WebSocket，请使用其他浏览器，例如chrome 4.0.249.0 +
+        </h1>
     </div>
-</div>
 
-<div id='mainPage' class='page' style='display:none;'>
-    <!--<div style='overflow:hidden;'>-->
-        <div class='talkLeft'>
+    <div id='prePage' class="input-group mb-3">
+        <input id='nickInput' type="text" class="form-control" placeholder="请输入您的昵称" aria-label="Recipient's username"
+            aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button id='open' class="btn btn-outline-secondary" type="button">进入聊天室</button>
+        </div>
+    </div>
+
+    <div id='mainPage' class='page' style='display:none;'>
+        <!--<div style='overflow:hidden;'>-->
+            <div class='user-box'>
+                <div id='onlineUsers'></div>
+                <button type="button" class="btn btn-danger" id="logout">退出</button>
+            </div>
+            <div class='message-box'>
             <div id='talkFrame'></div>
             <div class="input-group mb-3">
                 <div id='inputDiv'>
-                    <input id='message' type="text" class="form-control" placeholder="请输入您的信息"
-                           aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input id='message' type="text" class="form-control" placeholder="请输入您的信息" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2">
                 </div>
                 <div class="input-group-append">
                     <button id='send' class="btn btn-outline-secondary" type="button">发送</button>
                 </div>
-            <!--</div>-->
+                <!--</div>-->
+            </div>
         </div>
-        <div class='talkRight'>
-            <div id='onlineUsers'></div>
-        </div>
+
     </div>
-    <div class="exit-btn-box">
-        <button type="button" class="btn btn-danger" id="logout">退出</button>
-    </div>
-</div>
 </body>
+
 </html>
