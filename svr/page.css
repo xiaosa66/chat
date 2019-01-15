@@ -21,8 +21,8 @@ body {
 .user-box, .message-box {
     float: left;
     height: 80%;
-    padding: 5%;
-    margin: 5%;
+    padding: 1%;
+    margin: 1%;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
@@ -32,11 +32,11 @@ body {
     color: #000000;
 }
 .message-box {
-    width:60%;
+    width:66%;
 }
 
 #talkFrame {
-    height: 360px;
+    height: 403px;
     padding: 5px 5px;
 
     margin-bottom: 10px;
