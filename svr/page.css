@@ -1,6 +1,6 @@
 body {
-    color: #000;
-    background-color: #22252A;
+    color: #7C7C7D;
+    background-color: #272A2D;
     overflow: auto;
     margin: 0;
     padding: 0;
@@ -20,17 +20,19 @@ body {
 
 .user-box, .message-box {
     float: left;
-    height: 480px;
-    padding: 10px;
-    margin: 10px;
+    height: 80%;
+    padding: 5%;
+    margin: 5%;
     border: 1px solid #ccc;
+    border-radius: 3px;
 }
 .user-box {
-    background: #777;
-    color: #ccc;
+    background: #EBE8E7;
+    width: 30%;
+    color: #000000;
 }
 .message-box {
-    width:560px;
+    width:60%;
 }
 
 #talkFrame {
