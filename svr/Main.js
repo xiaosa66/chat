@@ -11,6 +11,7 @@ var io = require("socket.io").listen(PORT);
 
 io.sockets.on("connection",function(socket){
     socket.on("message",function(message){
+        console.log("message:",message);
         var mData = chatLib.analyzeMessageData(message);
         if (mData && mData.EVENT) {
 			switch (mData.EVENT) {
@@ -29,8 +30,6 @@ io.sockets.on("connection",function(socket){
                 'historyContent':historyContent.values()
                });
                 io.sockets.emit('message',data);//广播
-                //socket.emit('message',data);
-               // socket.broadcast.emit('message', data);//无效
 				break;
 
 			case EVENT_TYPE.SPEAK: // 用户发言
@@ -40,7 +39,6 @@ io.sockets.on("connection",function(socket){
                     'EVENT' : EVENT_TYPE.SPEAK,
                     'values' : [content]
                 });
-                //socket.emit('message',data);
                 io.sockets.emit('message',data);
 				historyContent.add({'user':onlineUserMap.get(socket.id),'content':content,'time':new Date().getTime()});
 				break;

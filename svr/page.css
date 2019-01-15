@@ -1,53 +1,72 @@
-body{color:#000;background-color: #22252A;
-    overflow:auto;margin:0;padding:0;}
-    body{font-size:12px;}
-	.gray {
-	color:gray;
-	}
-	.textIndent {
-	text-indent:2em;
-	}
-	.user-box, .message-box{
-	float:left;
-	height: 480px;
-	padding:10px;
-	margin:10px;
-	border:1px solid #ccc;
-	}
-	.message-box {
-	width:px;
-	}
-	#talkFrame {
-	height: 360px;
-	padding: 5px 5px;
+body {
+    color: #000;
+    background-color: #22252A;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}
 
-	margin-bottom:10px;
-	overflow-y:scroll;
-	overflow-x: none; 
-	}
-	#inputDiv {
-	margin-bottom:5px;
-	}
+body {
+    font-size: 12px;
+}
 
-	.page{
-	overflow:hidden;
-	width:890px;
-	margin: 0 auto;
-	background: #FFFFFF;
-	font-size:12px;
-	padding: 10px 10px;
-	margin-top:50px;
-	}
-	.f-right{
-	float:right;
-	}
-	#onlineUsers {
+.gray {
+    color: gray;
+}
 
-	width: 225px; height: 480px;
-	overflow-y:scroll;
-	overflow-x: none; 
-	}
-	.page, #talkFrame, #onlineUsers {
-	border-radius: 3px;
+.textIndent {
+    text-indent: 2em;
+}
+
+.user-box, .message-box {
+    float: left;
+    height: 480px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+
+.message-box {
+    width: px;
+}
+
+#talkFrame {
+    height: 360px;
+    padding: 5px 5px;
+
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    overflow-x: none;
+}
+
+#inputDiv {
+    margin-bottom: 5px;
+}
+
+.page {
+    overflow: hidden;
+    width: 890px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    font-size: 12px;
+    padding: 10px 10px;
+    margin-top: 50px;
+}
+
+.f-right {
+    float: right;
+}
+
+#onlineUsers {
+
+    width: 225px;
+    height: 480px;
+    overflow-y: scroll;
+    overflow-x: none;
+}
+
+.page, #talkFrame, #onlineUsers {
+    border-radius: 3px;
+}
 
 	
