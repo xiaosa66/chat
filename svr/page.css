@@ -23,7 +23,6 @@ body {
     height: 80%;
     padding: 1%;
     margin: 1%;
-    border: 1px solid #ccc;
     border-radius: 3px;
 }
 .user-box {
@@ -33,6 +32,8 @@ body {
 }
 .message-box {
     width:66%;
+    border: 1px solid #ccc;
+
 }
 
 #talkFrame {
@@ -56,6 +57,18 @@ body {
     font-size: 12px;
     padding: 10px 10px;
     margin-top: 50px;
+}
+.prepageBox {
+    overflow: hidden;
+    width: 890px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0);
+    font-size: 12px;
+    padding: 10px 10px;
+    margin-top: 50px;
+}
+.btn-box,.input-box {
+    text-align: center;
 }
 
 .f-right {

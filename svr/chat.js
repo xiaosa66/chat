@@ -12,6 +12,7 @@ $(document).ready(function () {
     var currentUserNick = null;
 
     if (typeof WebSocket === 'undefined') {
+        $("#prePageBox").hide();
         $("#prePage").hide();
         $("#errorPage").show();
     }
@@ -94,6 +95,7 @@ $(document).ready(function () {
             return;
         }
 
+        $("#prePageBox").hide();
         $("#prePage").hide();
         $("#mainPage").show();
         reset();
@@ -220,6 +222,7 @@ $(document).ready(function () {
 
     $("#logout").click(function (event) {
         logout();
+        $("#prePageBox").show();
         $("#prePage").show();
         $("#mainPage").hide();
     });
