@@ -11,10 +11,12 @@ var PORT = chatLib.PORT;
 //使用socket.io直接启动http服务
 var io = require("socket.io").listen(PORT);
 io.sockets.on("connection", function (socket) {
+    // 服务器一直监听message
     socket.on("message", function (message) {
         console.log("message:", message);
         var mData = chatLib.analyzeMessageData(message);
         if (mData && mData.EVENT) {
+            // 判断消息类型
             switch (mData.EVENT) {
                 case EVENT_TYPE.LOGIN: // 新用户连接
                     var newUser = {'uid': socket.id, 'nick': chatLib.getMsgFirstDataValue(mData)};

@@ -16,7 +16,7 @@ $(document).ready(function () {
         $("#prePage").hide();
         $("#errorPage").show();
     }
-
+    //更新用户列表
     function updateOnlineUser() {
         var html = ["<div>在线用户(" + onlineUserMap.size() + ")</div>"];
         if (onlineUserMap.size() > 0) {
@@ -35,7 +35,7 @@ $(document).ready(function () {
 
         $("#onlineUsers").html(html.join(''));
     }
-
+    //更新私聊选择器的用户
     function updateSelector() {
         let html = ["<div>在线用户(" + onlineUserMap.size() + ")</div>"];
         if (onlineUserMap.size() > 0) {
@@ -52,22 +52,22 @@ $(document).ready(function () {
 
         $("#select").html(html.join(''));
     }
-
+    //插入消息
     function appendMessage(msg) {
         $("#talkFrame").append("<div>" + msg + "</div>");
     }
-
+    //格式化用户信息   输出 nickname  uid
     function formatUserString(user) {
         if (!user) {
             return '';
         }
         return user.nick + "<span class='gray'>(" + user.uid + ")</span> ";
     }
-
+    // 格式化消息时间
     function formatUserTalkString(user) {
         return formatUserString(user) + new Date().format("hh:mm:ss") + " ";
     }
-
+    // 格式化年份
     function formatUserTalkHisString(user, time) {
         return formatUserString(user) + new Date(time).format("yyyy-MM-dd hh:mm:ss") + " ";
     }
@@ -87,7 +87,7 @@ $(document).ready(function () {
     function close() {
 
     }
-
+    //用户点击登陆
     $("#open").click(function (event) {
         currentUserNick = $.trim($("#nickInput").val());
         if ('' == currentUserNick) {
@@ -99,16 +99,17 @@ $(document).ready(function () {
         $("#prePage").hide();
         $("#mainPage").show();
         reset();
-
+        // socket连接
         socket = io.connect('http://192.144.186.149:8503');
         onlineUserMap = new zTool.SimpleMap();
+        // 连接上以后 给服务器发送登陆消息
         socket.on('connect', function () {
             socket.emit('message', JSON.stringify({
                 'EVENT': EVENT_TYPE.LOGIN,
                 'values': [currentUserNick]
             }));
         });
-
+        //服务器给网页发送消息    判断消息类型
         socket.on("message", function (message) {
             var mData = chatLib.analyzeMessageData(message);
             if (mData && mData.EVENT) {
@@ -155,6 +156,7 @@ $(document).ready(function () {
                         appendMessage(formatUserTalkString(mData.user));
                         appendMessage("<span>&nbsp;&nbsp;</span>" + content);
                         break;
+                        //私聊用户  未完成
                     case EVENT_TYPE.SINGLE:
                         var content = mData.values[0];
                         appendMessage("用户私聊 测试中");
@@ -191,7 +193,7 @@ $(document).ready(function () {
         }
     });
 
-//发送消息函数
+    //发送消息函数
     function sendMsg() {
         var value = $.trim($("#message").val());
         if (value) {
@@ -203,7 +205,7 @@ $(document).ready(function () {
             socket.emit('message', data);
         }
     };
-//用户点击发送按钮
+    //用户点击发送按钮
     $("#send").click(function (event) {
         sendMsg();
     });
